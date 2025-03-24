@@ -2,87 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="description" content="Online store for indoor plants with a wide variety of categories">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" href="./assets/svg/empty-cart-icon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;500&display=swap"
-    rel="stylesheet">
-  <title>Online-store</title>
+  <link rel="icon" href="./assets/svg/empty-cart-icon.svg" alt="Store Icon">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;500&display=swap" rel="stylesheet">
+  
+  <title>Online Plant Store - Indoor Plants Catalog</title>
 </head>
 <body class="body">
+  <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 0; background: #000; color: white; padding: 8px; z-index: 100;">
+    Skip to Main Content
+  </a>
+
   <div class="body__wrapper">
-    <header class="header">
+    <header class="header" role="banner">
       <div class="header__container container">
-        <a class="header__logo" href="/catalog">
+        <a class="header__logo" href="/catalog" aria-label="Home Page">
           <h1 class="header__logo-text">Online<br>store</h1>
         </a>
-        <nav class="nav">
+        <nav class="nav" aria-label="Main Navigation">
           <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link" href="/catalog">Catalog</a></li>
-            <li class="nav__item"><a class="nav__link" href="#promo">Promo code</a></li>
-            <li class="nav__item"><a class="nav__link" href="#contacts">Contacts</a></li>
+            <li class="nav__item">
+              <a class="nav__link" href="/catalog" aria-current="page">Catalog</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#promo">Promo Code</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#contacts">Contacts</a>
+            </li>
           </ul>
-          <a class="cart" href="/cart">
-            <span class="cart__num" id="header-amount">0</span>
+          <a class="cart" href="/cart" aria-label="View Shopping Cart">
+            <span class="cart__num" id="header-amount" aria-live="polite">0</span>
           </a>
           <div class="total-amount">
-            <span class="total-amount__value usd-symbol" id="header-sum">0</span>
+            <span class="total-amount__value usd-symbol" id="header-sum" aria-live="polite">0</span>
           </div>
         </nav>
       </div>
     </header>
-    <main class="main">
-      <div class="main__container container" id="page-container">
+
+    <main class="main" id="main-content" role="main">
+      <div class="main__container container" id="page-container" aria-live="polite">
       </div>
     </main>
-    <section id="promo" class="promo">
+
+    <section id="promo" class="promo" aria-labelledby="promo-title">
       <div class="container">
-        <img class="promo__photo" src="assets/img/eucalypt.png" alt="eucalypt">
+        <img class="promo__photo" src="assets/img/eucalypt.png" alt="Promotional eucalyptus plant" />
         <div class="promo__container">
-          <h3 class="promo__title">Get <span>10% OFF</span> on your purchase</h3>
+          <h2 class="promo__title" id="promo-title">Get <span>10% OFF</span> on your purchase</h2>
           <div class="promo__descr">Use promo codes:</div>
-          <div class="promo__code"><span>PLANTS10</span> <span>SALE10</span> <span>FORYOU10</span></div>
+          <div class="promo__code" aria-label="Available Promo Codes">
+            <span>PLANTS10</span> 
+            <span>SALE10</span> 
+            <span>FORYOU10</span>
+          </div>
           <div class="promo__sum">Discounts are summed up.</div>
         </div>
       </div>
     </section>
-    <footer id="contacts" class="footer">
+
+    <footer id="contacts" class="footer" role="contentinfo">
       <div class="footer__container container">
         <div class="footer__column">
           <p class="footer__title">Contacts</p>
           <ul class="footer__list">
-            <li class="footer__item"><a href="https://yumentsel.github.io/rsschool-cv/" target="_blank">Yuliya Mentsel</a>
+            <li class="footer__item">
+              <a href="https://yumentsel.github.io/rsschool-cv/" target="_blank" rel="noopener noreferrer">Yuliya Mentsel</a>
             </li>
-            <li class="footer__item"><a href="https://lexarudak.github.io/rsschool-cv/" target="_blank">Aliaksei Rudak</a>
+            <li class="footer__item">
+              <a href="https://lexarudak.github.io/rsschool-cv/" target="_blank" rel="noopener noreferrer">Aliaksei Rudak</a>
             </li>
           </ul>
         </div>
         <div class="footer__column">
           <p class="footer__title">GitHub</p>
           <ul class="footer__list">
-            <li class="footer__item"><a href="https://github.com/YuMentsel" target="_blank">Yuliya Mentsel</a>
+            <li class="footer__item">
+              <a href="https://github.com/YuMentsel" target="_blank" rel="noopener noreferrer">Yuliya Mentsel</a>
             </li>
-            <li class="footer__item"><a href="https://github.com/lexarudak" target="_blank">Aliaksei Rudak</a>
+            <li class="footer__item">
+              <a href="https://github.com/lexarudak" target="_blank" rel="noopener noreferrer">Aliaksei Rudak</a>
             </li>
           </ul>
         </div>
         <div class="footer__column">
           <p class="footer__title">RS School</p>
           <ul class="footer__list">
-            <li class="footer__item"><a href="https://rs.school/js/" target="_blank"><img class="rs-school__img" alt="RS School logo" src="./assets/svg/rs_school.svg" width="80"></a>
+            <li class="footer__item">
+              <a href="https://rs.school/js/" target="_blank" rel="noopener noreferrer">
+                <img class="rs-school__img" alt="RS School logo" src="./assets/svg/rs_school.svg" width="80">
+              </a>
             </li>
-            <li class="footer__item"><span>2022</span>
-            </li>
-            <li class="footer__item design-info"><a href="https://www.behance.net/gallery/157498329/Online-store-of-indoor-plants/modules/888571069" target="_blank">Designed by Romana Chaban</a>
+            <li class="footer__item"><span>2022</span></li>
+            <li class="footer__item design-info">
+              <a href="https://www.behance.net/gallery/157498329/Online-store-of-indoor-plants/modules/888571069" target="_blank" rel="noopener noreferrer">
+                Designed by Romana Chaban
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
   </div>
-  <div class="purchase-modal page">
+
+  <div class="purchase-modal page" role="dialog" aria-modal="true" aria-labelledby="purchase-modal-title"></div>
   </div>
 
   <!-- templates -->
@@ -92,7 +123,7 @@
     
       <div class="filter">
         <div class="filter__type">
-          <h3 class="filter__title">Category</h3>
+          <h2 class="filter__title">Category</h3>
           <ul id='check-type' class="filter__list">
             <li class="check">
               <label class="check__label">Succulent
@@ -177,21 +208,70 @@
           <h3 class="filter__title">Price</h3>
           <div class="range">
             <div class="range__value">
-              <span>min</span>
-              <input type="number" class="input-min" value="1" max="100">
+              <label for="price-input-min">
+                <span>Minimum Price</span>
+                <input 
+                  type="number" 
+                  id="price-input-min" 
+                  class="input-min" 
+                  value="1" 
+                  max="100" 
+                  aria-describedby="price-range-description"
+                >
+              </label>
               <span>$</span>
-              <div class="range__separator">-</div>
-              <span>max</span>
-              <input type="number" class="input-max" value="100" max="100">
+              
+              <label for="price-input-max">
+                <span>Maximum Price</span>
+                <input 
+                  type="number" 
+                  id="price-input-max" 
+                  class="input-max" 
+                  value="100" 
+                  max="100" 
+                  aria-describedby="price-range-description"
+                >
+              </label>
               <span>$</span>
             </div>
+            
             <div class="range__slider slider">
               <div class="slider__progress"></div>
             </div>
+            
             <div class="range__range-input">
-              <input type="range" class="range-min" min="1" max="106" value="1" step="1">
-              <input type="range" class="range-max" min="1" max="100" value="100" step="1">
+              <label for="range-min">
+                <span class="sr-only">Minimum Price Range</span>
+                <input 
+                  type="range" 
+                  id="range-min" 
+                  class="range-min" 
+                  min="1" 
+                  max="106" 
+                  value="1" 
+                  step="1" 
+                  aria-describedby="price-range-description"
+                >
+              </label>
+              
+              <label for="range-max">
+                <span class="sr-only">Maximum Price Range</span>
+                <input 
+                  type="range" 
+                  id="range-max" 
+                  class="range-max" 
+                  min="1" 
+                  max="100" 
+                  value="100" 
+                  step="1" 
+                  aria-describedby="price-range-description"
+                >
+              </label>
             </div>
+            
+            <p id="price-range-description" class="sr-only">
+              Use these sliders to select a price range between $1 and $100
+            </p>
           </div>
         </div>
     
@@ -207,19 +287,68 @@
           <h3 class="filter__title">Stock</h3>
           <div class="range">
             <div class="range__value">
-              <span>min</span>
-              <input type="number" class="input-min" value="1" max="65">
-              <div class="range__separator">-</div>
-              <span>max</span>
-              <input type="number" class="input-max" value="65" max="65">
+              <label for="stock-input-min">
+                <span>Minimum Stock</span>
+                <input 
+                  type="number" 
+                  id="stock-input-min" 
+                  class="input-min" 
+                  value="1" 
+                  max="65" 
+                  aria-describedby="stock-range-description"
+                >
+              </label>
+              
+              <label for="stock-input-max">
+                <span>Maximum Stock</span>
+                <input 
+                  type="number" 
+                  id="stock-input-max" 
+                  class="input-max" 
+                  value="65" 
+                  max="65" 
+                  aria-describedby="stock-range-description"
+                >
+              </label>
             </div>
+            
             <div class="range__slider slider">
               <div class="slider__progress"></div>
             </div>
+            
             <div class="range__range-input">
-              <input type="range" class="range-min" min="1" max="69" value="1" step="1">
-              <input type="range" class="range-max" min="1" max="65" value="65" step="1">
+              <label for="stock-range-min">
+                <span class="sr-only">Minimum Stock Range</span>
+                <input 
+                  type="range" 
+                  id="stock-range-min" 
+                  class="range-min" 
+                  min="1" 
+                  max="69" 
+                  value="1" 
+                  step="1" 
+                  aria-describedby="stock-range-description"
+                >
+              </label>
+              
+              <label for="stock-range-max">
+                <span class="sr-only">Maximum Stock Range</span>
+                <input 
+                  type="range" 
+                  id="stock-range-max" 
+                  class="range-max" 
+                  min="1" 
+                  max="65" 
+                  value="65" 
+                  step="1" 
+                  aria-describedby="stock-range-description"
+                >
+              </label>
             </div>
+            
+            <p id="stock-range-description" class="sr-only">
+              Use these sliders to select a stock range between 1 and 65
+            </p>
           </div>
         </div>
     
