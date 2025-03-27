@@ -8,6 +8,7 @@ class ProductCards {
   constructor(cart: Cart) {
     this.cart = cart;
   }
+
   draw(data: Products[]): void {
     const productCard: Products[] = data;
     const fragment: DocumentFragment = document.createDocumentFragment();
@@ -17,10 +18,18 @@ class ProductCards {
       const productCardClone: Node = productCardTemp.content.cloneNode(true);
       if (!isHTMLElement(productCardClone)) throw new Error(`Element is not HTMLElement!`);
 
-      getExistentElement(
-        '.product__photo',
-        productCardClone
-      ).style.backgroundImage = `url('assets/img/${item.thumbnail}')`;
+      const photoContainer = getExistentElement('.product__photo', productCardClone);
+
+      // Replace background image with <img> element
+      photoContainer.style.backgroundImage = 'none';
+      const img = document.createElement('img');
+      img.src = `assets/img/${item.thumbnail}`;
+      img.alt = item.title;
+      img.classList.add('product__photo-img');
+      img.width = 250;
+      img.height = 250;
+      img.loading = 'lazy';
+      photoContainer.appendChild(img);
 
       getExistentElement('.product__type', productCardClone).textContent = item.type;
       getExistentElement('.product__title', productCardClone).textContent = item.title;
@@ -35,6 +44,7 @@ class ProductCards {
       } else {
         getExistentElement('.product__discount', productCardClone).style.display = 'none';
       }
+
       getExistentElement('.product__title', productCardClone).addEventListener('click', function () {
         Router.goTo(`/${item.id}`);
       });
@@ -48,6 +58,7 @@ class ProductCards {
 
       fragment.append(productCardClone);
     });
+
     getExistentElement('.products__container').appendChild(fragment);
   }
 }
